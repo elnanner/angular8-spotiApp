@@ -1,1 +1,15 @@
-<p>search works!</p>
+<div class="row">
+    <div class="col">
+        <input type="text" class="form-control" name="buscar-artista" #termino (keyup)="buscar(termino.value)" placeholder="Buscar artista...">
+    </div>
+</div>
+
+<div class="card-columns mt-5">
+    <div class="card" *ngFor="let artist of searchedArtists">
+        <h4>{{artist.id}}</h4>
+        <img [src]="artist.images | noimage" class="card-img-top " alt="imagen album '{{artist.name}}'">
+        <div class="card-body ">
+            <h5 class="card-title ">{{artist.name}}</h5>
+        </div>
+    </div>
+</div>
